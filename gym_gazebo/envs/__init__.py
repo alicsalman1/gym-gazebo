@@ -1,1 +1,7 @@
 from gym_gazebo.envs.gazebo_env import GazeboEnv
+
+#SnakeMonster
+from gym_gazebo.envs.gazebo_circuit2_snakemonster_lidar import GazeboCircuit2SnakeMonsterLidarEnv
+from gym_gazebo.envs.gazebo_snake_lidar import GazeboSnakeLidarEnv
+from gym_gazebo.envs.gazebo_circuit2c_snakemonster_camera_nn import GazeboCircuit2cSnakeMonsterCameraNnEnv
+

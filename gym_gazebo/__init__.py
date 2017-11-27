@@ -73,3 +73,20 @@ register(
     id='GazeboModularScara4DOF-v3',
     entry_point='gym_gazebo.envs.modular_scara:GazeboModularScara4DOFv3Env',
 )
+
+#Snake Monster
+register(
+    id='GazeboCircuit2SnakeMonsterLidar-v0',
+    entry_point='gym_gazebo.envs:GazeboCircuit2SnakeMonsterLidarEnv',
+    # More arguments here
+)
+register(
+    id='GazeboSnakeLidar-v0',
+    entry_point='gym_gazebo.envs:GazeboSnakeLidarEnv',
+    # More arguments here
+)
+register(
+    id='GazeboCircuit2cSnakeMonsterCameraNnEnv-v0',
+    entry_point='gym_gazebo.envs:GazeboCircuit2cSnakeMonsterCameraNnEnv',
+    # More arguments here
+)

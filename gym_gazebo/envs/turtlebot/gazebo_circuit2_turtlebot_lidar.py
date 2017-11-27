@@ -8,7 +8,7 @@ from gym import utils, spaces
 from gym_gazebo.envs import gazebo_env
 from geometry_msgs.msg import Twist
 from std_srvs.srv import Empty
-
+from gym_gazebo.envs import test
 from sensor_msgs.msg import LaserScan
 
 from gym.utils import seeding
@@ -18,6 +18,7 @@ class GazeboCircuit2TurtlebotLidarEnv(gazebo_env.GazeboEnv):
     def __init__(self):
         # Launch the simulation with the given launchfile name
         gazebo_env.GazeboEnv.__init__(self, "GazeboCircuit2TurtlebotLidar_v0.launch")
+
         self.vel_pub = rospy.Publisher('/mobile_base/commands/velocity', Twist, queue_size=5)
         self.unpause = rospy.ServiceProxy('/gazebo/unpause_physics', Empty)
         self.pause = rospy.ServiceProxy('/gazebo/pause_physics', Empty)
@@ -103,9 +104,7 @@ class GazeboCircuit2TurtlebotLidarEnv(gazebo_env.GazeboEnv):
 
         # Resets the state of the environment and returns an initial observation.
         rospy.wait_for_service('/gazebo/reset_simulation')
-        try:
-            #reset_proxy.call()
-            self.reset_proxy()
+        
         except (rospy.ServiceException) as e:
             print ("/gazebo/reset_simulation service call failed")
 
